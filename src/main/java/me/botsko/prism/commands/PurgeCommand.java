@@ -27,15 +27,15 @@ public class PurgeCommand implements SubHandler {
             call.getSender().sendMessage(
                     Prism.messenger.playerHeaderMsg("Prism" + ChatColor.GRAY + " v"
                             + plugin.getPrismVersion()));
-            call.getSender().sendMessage(Prism.messenger.playerSubduedHeaderMsg("Purges Scheduled: " + ChatColor.WHITE + plugin.getSchedulePool().getTaskCount()));
+            call.getSender().sendMessage(Prism.messenger.playerSubduedHeaderMsg("数据清理已计划: " + ChatColor.WHITE + plugin.getSchedulePool().getTaskCount()));
             call.getSender().sendMessage(
-                    Prism.messenger.playerSubduedHeaderMsg("Purges Run : " + ChatColor.WHITE + plugin.getSchedulePool().getCompletedTaskCount()));
+                    Prism.messenger.playerSubduedHeaderMsg("数据清理进程 : " + ChatColor.WHITE + plugin.getSchedulePool().getCompletedTaskCount()));
             call.getSender().sendMessage(
-                    Prism.messenger.playerSubduedHeaderMsg("Pool String: " + ChatColor.WHITE + plugin.getSchedulePool().toString()));
+                    Prism.messenger.playerSubduedHeaderMsg("连接池字符串: " + ChatColor.WHITE + plugin.getSchedulePool().toString()));
         } else {
-            if (Objects.equals(call.getArgs()[0], "execute")) {
+            if (Objects.equals(call.getArgs()[0], "execute") || Objects.equals(call.getArgs()[1], "执行")) {
                 call.getSender().sendMessage(
-                        Prism.messenger.playerHeaderMsg("Prism" + ChatColor.GRAY + " Executing Purge Run"));
+                        Prism.messenger.playerHeaderMsg("Prism" + ChatColor.GRAY + " 正在执行数据清理进程."));
                 Bukkit.getScheduler().runTaskAsynchronously(plugin, plugin.getPurgeManager());
             }
         }

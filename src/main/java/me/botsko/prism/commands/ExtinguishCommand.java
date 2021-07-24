@@ -35,20 +35,19 @@ public class ExtinguishCommand implements SubHandler {
                 final int _tmp_radius = Integer.parseInt(call.getArg(1));
                 if (_tmp_radius > 0) {
                     if (_tmp_radius > plugin.getConfig().getInt("prism.ex.max-radius")) {
-                        call.getPlayer().sendMessage(Prism.messenger.playerError("Radius exceeds max set in config."));
+                        call.getPlayer().sendMessage(Prism.messenger.playerError("半径超过了配置中设定的最大值."));
                         return;
                     } else {
                         radius = _tmp_radius;
                     }
                 } else {
                     call.getPlayer().sendMessage(Prism.messenger.playerError(
-                            "Radius must be greater than zero. Or leave it off to use the default. "
-                                    + "Use /prism ? for help."));
+                            "半径必须大于0. 或者忽略它以使用默认值.  使用 '/prism ?' 获取帮助."));
                     return;
                 }
             } else {
                 call.getPlayer().sendMessage(Prism.messenger.playerError(
-                        "Radius must be a number. Or leave it off to use the default. Use /prism ? for help."));
+                        "半径必须为一个数值. 或者忽略它以使用默认值. 使用 '/prism ?' 获取帮助."));
                 return;
             }
         }
@@ -57,7 +56,7 @@ public class ExtinguishCommand implements SubHandler {
                 radius);
         if (!blockStateChanges.isEmpty()) {
 
-            call.getPlayer().sendMessage(Prism.messenger.playerHeaderMsg("Extinguished nearby fire! Cool!"));
+            call.getPlayer().sendMessage(Prism.messenger.playerHeaderMsg("周围的火都被扑灭了! 真凉快!"));
 
             // Trigger the event
             final PrismBlocksExtinguishEvent event = new PrismBlocksExtinguishEvent(blockStateChanges, call.getPlayer(),
@@ -66,7 +65,7 @@ public class ExtinguishCommand implements SubHandler {
 
         } else {
             call.getPlayer()
-                    .sendMessage(Prism.messenger.playerError("No fires found within that radius to extinguish."));
+                    .sendMessage(Prism.messenger.playerError("没有在这个半径内找到任何可扑灭的东西."));
         }
     }
 

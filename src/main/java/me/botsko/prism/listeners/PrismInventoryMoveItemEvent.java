@@ -33,6 +33,7 @@ public class PrismInventoryMoveItemEvent implements Listener {
             if (containerLoc == null)
                 return;
 
+            // TODO: Rothes - 这里是否可以/需要翻译?
             String invName = event.getSource().getType().name().toLowerCase();
 
             RecordingQueue.addToQueue(ActionFactory.createItemStack("item-insert", event.getItem(),

@@ -1,6 +1,8 @@
 package me.botsko.prism.actions.entity;
 
 import com.google.gson.annotations.SerializedName;
+import me.botsko.prism.Prism;
+import me.botsko.prism.PrismLocalization;
 import me.botsko.prism.utils.EntityUtils;
 import me.botsko.prism.utils.MiscUtils;
 import org.bukkit.OfflinePlayer;
@@ -40,6 +42,12 @@ public class EntitySerializer {
         return customDesc;
     }
 
+    protected final PrismLocalization prismLocalization;
+
+    public EntitySerializer() {
+        prismLocalization = Prism.getInstance().getPrismLocalization();
+    }
+
     // Le sigh
     public final void setNewColor(String color) {
         newColor = color;
@@ -50,7 +58,8 @@ public class EntitySerializer {
      * @param entity Entity.
      */
     public final void serialize(Entity entity) {
-        entityName = entity.getType().name().toLowerCase();
+        entityName = prismLocalization.hasEntityLocale(entity.getType().name()) ?
+                prismLocalization.getEntityLocale(entity.getType().name()) : entity.getType().name().toLowerCase();
 
         // Get custom name
         customName = entity.getCustomName();
@@ -68,7 +77,7 @@ public class EntitySerializer {
             if (mob.getOwner() != null) {
                 tamingOwner = mob.getOwner().getUniqueId().toString();
             } else if (mob.isTamed()) {
-                tamingOwner = "-none-";
+                tamingOwner = "-无-";
             }
         }
 
@@ -141,14 +150,14 @@ public class EntitySerializer {
 
             OfflinePlayer player = EntityUtils.offlineOf(tamingOwner);
             if (player != null) {
-                String str = player.getName() + "'s ";
+                String str = player.getName() + "的 ";
                 sb.append(str);
                 index = str.length();
             }
         }
 
         if (Boolean.FALSE.equals(isAdult)) {
-            sb.append("baby ");
+            sb.append("小");
         }
 
         sb.append(MiscUtils.niceName(entityName));
@@ -158,7 +167,7 @@ public class EntitySerializer {
         }
 
         if (customName != null) {
-            sb.append(" named ").append(customName);
+            sb.append(" 名称为 ").append(customName);
         }
 
         niceName(sb, index);

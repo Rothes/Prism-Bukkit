@@ -39,7 +39,7 @@ public class UseMonitor {
 
         msg = ChatColor.GRAY + playername + " " + msg;
         if (count == 5) {
-            msg = playername + " continues - pausing warnings.";
+            msg = playername + " 仍在继续 - 已暂停警告通知.";
         }
 
         if (count <= 5) {
@@ -80,7 +80,7 @@ public class UseMonitor {
         // Ensure we're tracking this block
         if (blocksToAlertOnPlace.contains(blockType) || blocksToAlertOnPlace.contains(block.getType().name())) {
             final String alias = Prism.getItems().getAlias(block.getType(), block.getBlockData());
-            incrementCount(playername, "placed " + alias);
+            incrementCount(playername, "放置了 " + alias);
         }
     }
 
@@ -96,7 +96,7 @@ public class UseMonitor {
         // Ensure we're tracking this block
         if (blocksToAlertOnBreak.contains(blockType) || blocksToAlertOnBreak.contains(block.getType().name())) {
             final String alias = Prism.getItems().getAlias(block.getType(), block.getBlockData());
-            incrementCount(playername, "broke " + alias);
+            incrementCount(playername, "破坏了 " + alias);
         }
     }
 

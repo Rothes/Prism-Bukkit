@@ -33,26 +33,26 @@ public class DeleteCommand extends AbstractCommand {
     public void handle(final CallInfo call) {
 
         // Allow for canceling tasks
-        if (call.getArgs().length > 1 && call.getArg(1).equals("cancel")) {
+        if (call.getArgs().length > 1 && (call.getArg(1).equals("cancel") || call.getArg(1).equals("取消"))) {
             if (plugin.getPurgeManager().deleteTask != null) {
                 plugin.getPurgeManager().deleteTask.cancel();
-                call.getSender().sendMessage(Prism.messenger.playerMsg("Current purge tasks have been canceled."));
+                call.getSender().sendMessage(Prism.messenger.playerMsg("已取消目前的数据清理任务."));
             } else {
-                call.getSender().sendMessage(Prism.messenger.playerError("No purge task is currently running."));
+                call.getSender().sendMessage(Prism.messenger.playerError("目前没有运行中的数据清理任务."));
             }
             return;
         }
 
         // Allow for wiping live queue
-        if (call.getArgs().length > 1 && call.getArg(1).equals("queue")) {
+        if (call.getArgs().length > 1 && (call.getArg(1).equals("queue") || call.getArg(1).equals("队列"))) {
             if (RecordingQueue.getQueue().size() > 0) {
-                Prism.log("User " + call.getSender().getName()
-                        + " wiped the live queue before it could be written to the database. "
-                        + RecordingQueue.getQueue().size() + " events lost.");
+                Prism.log("用户 " + call.getSender().getName()
+                        + " 在将实时队列写入数据库之前擦除了它们. "
+                        + RecordingQueue.getQueue().size() + " 个事件已丢失.");
                 RecordingQueue.getQueue().clear();
-                call.getSender().sendMessage(Prism.messenger.playerSuccess("Unwritten data in queue cleared."));
+                call.getSender().sendMessage(Prism.messenger.playerSuccess("队列中未写入的数据已清除."));
             } else {
-                call.getSender().sendMessage(Prism.messenger.playerError("Event queue is empty, nothing to wipe."));
+                call.getSender().sendMessage(Prism.messenger.playerError("事件队列为空, 没有可以擦除的数据."));
             }
             return;
         }
@@ -68,9 +68,9 @@ public class DeleteCommand extends AbstractCommand {
         StringBuilder defaultsReminder = checkIfDefaultUsed(parameters);
         if (parameters.getFoundArgs().size() > 0) {
 
-            call.getSender().sendMessage(Prism.messenger.playerSubduedHeaderMsg("Purging data..." + defaultsReminder));
+            call.getSender().sendMessage(Prism.messenger.playerSubduedHeaderMsg("正在清理数据..." + defaultsReminder));
             call.getSender().sendMessage(Prism.messenger
-                    .playerHeaderMsg("Starting purge cycle." + ChatColor.GRAY + " No one will ever know..."));
+                    .playerHeaderMsg("正在开始周期数据清理." + ChatColor.GRAY + " 没有人会知道..."));
 
             plugin.getServer().getScheduler().runTaskAsynchronously(plugin, () -> {
                 int purgeTickDelay = plugin.getConfig().getInt("prism.purge.batch-tick-delay");
@@ -91,13 +91,12 @@ public class DeleteCommand extends AbstractCommand {
                 final long minId = extents[0];
                 final long maxId = extents[1];
                 Prism.log(
-                        "Beginning prism database purge cycle. Will be performed in batches so "
-                                + "we don't tie up the db...");
+                        "正在进行 Prism 周期数据库数据清理. 清理将分批进行, 因此我们不会占用数据库...");
                 deleteTask = plugin.getServer().getScheduler().runTaskAsynchronously(plugin,
                         new PurgeTask(plugin, paramList, purgeTickDelay, minId, maxId, callback));
             });
         } else {
-            call.getSender().sendMessage(Prism.messenger.playerError("You must supply at least one parameter."));
+            call.getSender().sendMessage(Prism.messenger.playerError("您必须提供至少一个参数."));
         }
     }
 

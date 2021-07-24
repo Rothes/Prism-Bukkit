@@ -35,7 +35,7 @@ public class ActionsCommand implements SubHandler {
      */
     private void help(CommandSender sender) {
 
-        sender.sendMessage(Prism.messenger.playerHeaderMsg(ChatColor.GOLD + "--- Actions List ---"));
+        sender.sendMessage(Prism.messenger.playerHeaderMsg(ChatColor.GOLD + "--- 行为列表 ---"));
 
         // Build short list
         final List<String> shortNames = new ArrayList<>();
@@ -60,7 +60,7 @@ public class ActionsCommand implements SubHandler {
             i++;
         }
         sender.sendMessage(Prism.messenger
-                .playerMsg(ChatColor.LIGHT_PURPLE + "Action Aliases:" + ChatColor.WHITE + " " + actionList));
+                .playerMsg(ChatColor.LIGHT_PURPLE + "行为别名:" + ChatColor.WHITE + " " + actionList));
 
         // Build display of full actions
         actionList = new StringBuilder();
@@ -73,7 +73,7 @@ public class ActionsCommand implements SubHandler {
             i++;
         }
         sender.sendMessage(Prism.messenger
-                .playerMsg(ChatColor.LIGHT_PURPLE + "Full Actions:" + ChatColor.GRAY + " " + actionList));
+                .playerMsg(ChatColor.LIGHT_PURPLE + "所有行为:" + ChatColor.GRAY + " " + actionList));
 
     }
 }

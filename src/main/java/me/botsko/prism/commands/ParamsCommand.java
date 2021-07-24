@@ -23,46 +23,44 @@ public class ParamsCommand implements SubHandler {
 
     private void help(CommandSender sender) {
 
-        sender.sendMessage(Prism.messenger.playerHeaderMsg(ChatColor.GOLD + "--- Parameters Help ---"));
+        sender.sendMessage(Prism.messenger.playerHeaderMsg(ChatColor.GOLD + "--- 参数帮助 ---"));
 
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "r:[radius]" + ChatColor.WHITE
-                + " i.e. 20, or 100. Defaults to default-radius defined in config."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "r:global" + ChatColor.WHITE
-                + " Force a worldwide search, for lookups only (unless configured for rollbacks)."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "r:<player|x,y,z>:[radius]"
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "r:[半径]" + ChatColor.WHITE
+                + " 例如 20, 或 100. 默认值为配置中定义的 default-radius."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "r:(global|全局)" + ChatColor.WHITE
+                + " 可以强制在整个世界中搜索, 只能在查询中使用 (除非已为回滚配置了配置文件)."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "r:<玩家|x,y,z>:[半径]"
                 + ChatColor.WHITE
-                + " Base the radius around another place, like r:<player>:20 or r:20,35,10:5 [x,y,z]"));
+                + " 可以基于另一地点来指定半径, 例如 r:<玩家>:20 或 r:20,35,10:5 [x,y,z]格式"));
         sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "r:we" + ChatColor.WHITE
-                + " Use a WorldEdit selection."));
+                + " 可以使用 WorldEdit 选区."));
         sender.sendMessage(Prism.messenger.playerMsg(ChatColor.GRAY + "---"));
 
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "a:[action]" + ChatColor.WHITE
-                + " Like 'block-break' (See below for full list). No default."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "b:[block]" + ChatColor.WHITE
-                + " Like 'grass' or '2' or '2:0'. No default."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "before:[time]" + ChatColor.WHITE
-                + " Events prior to x long ago."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "e:[entity]" + ChatColor.WHITE
-                + " Like 'pig'. No default."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "a:[行为]" + ChatColor.WHITE
+                + " 例如 'block-break' (如果需要完整的列表, 请看底部). 没有默认值."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "b:[方块]" + ChatColor.WHITE
+                + " 例如 'grass' 或 '2', '2:0'. 没有默认值."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "before:[时长]" + ChatColor.WHITE
+                + " 在 x 时长前发生的事件."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "e:[实体]" + ChatColor.WHITE
+                + " 例如 'pig'. 没有默认值."));
         sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "id:[#]" + ChatColor.WHITE
-                + " Record id. Useful for single item rollbacks/restores without a wand."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "k:[text]" + ChatColor.WHITE
-                + " Keyword search. Mainly for command/chat logging."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "p:[player]" + ChatColor.WHITE
-                + " Like 'viveleroi'. No default."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "since:[time]" + ChatColor.WHITE
-                + " Events since to x long ago (same as t:)."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "t:[time]" + ChatColor.WHITE
-                + " Events since x long ago. Like 1s(seconds), 20m(minutes), 1h(hour), 7d(days), 2w(weeks). "
-                + "Default based on config."));
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "w:[world]" + ChatColor.WHITE
-                + " Defaults to your current world."));
-        sender.sendMessage(Prism.messenger.playerMsg("Prefix action, player, or entity names with ! to exclude. "
-                + "Like p:!viveleroi"));
-        sender.sendMessage(Prism.messenger.playerMsg("Prefix player names with ~ for partial match. Like p:~vive"));
+                + " 记录 ID. 在未开启魔棒时回滚/还原单个项目时很有用."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "k:[文本]" + ChatColor.WHITE
+                + " 搜索关键字. 主要用于指令/聊天记录."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "p:[玩家]" + ChatColor.WHITE
+                + " 例如 'Rothes'. 没有默认值."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "since:[时长]" + ChatColor.WHITE
+                + " 从 x 时长后发生的事件 (等同于 t:)."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "t:[时长]" + ChatColor.WHITE
+                + " 从 x 时长后发生的事件. 例如(seconds|秒), 20m(minutes|分), 1h(hour|时), 7d(days|天), 2w(weeks|周). 默认值在配置中设定."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + "w:[世界]" + ChatColor.WHITE
+                + " 默认值为当前所处的世界."));
+        sender.sendMessage(Prism.messenger.playerMsg("在行为、玩家、或者实体名前加上一个 '!' 可以排除它们.   例如 p:!Rothes"));
+        sender.sendMessage(Prism.messenger.playerMsg("在玩家前加上一个 '~' 可以用于部分匹配. 例如 p:~vive"));
 
-        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.GRAY + "Use " + ChatColor.WHITE + "/pr actions"
-                + ChatColor.GRAY + " to view list of actions."));
+        sender.sendMessage(Prism.messenger.playerMsg(ChatColor.GRAY + "使用 " + ChatColor.WHITE + "/pr 行为(actions)"
+                + ChatColor.GRAY + " 来查看所有行为的列表."));
 
     }
 }

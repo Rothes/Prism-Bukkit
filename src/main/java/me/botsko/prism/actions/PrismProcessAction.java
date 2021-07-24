@@ -20,7 +20,7 @@ public class PrismProcessAction extends GenericAction {
 
         if (processType != null) {
             actionData.params = parameters;
-            actionData.processType = processType.name().toLowerCase();
+            actionData.processType = processType.getLocalization();
         }
     }
 

@@ -11,7 +11,7 @@ public class KeywordParameter extends SimplePrismParameterHandler {
      *
      */
     public KeywordParameter() {
-        super("Keyword", Pattern.compile("[^\\s]+"), "k");
+        super("Keyword", Pattern.compile("[^\\s]+"), "k", "关键字");
     }
 
     /**

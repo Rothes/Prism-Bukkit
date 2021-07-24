@@ -20,9 +20,9 @@ public class SenderPurgeCallback implements PurgeCallback {
         if (sender == null)
             return;
         sender.sendMessage(
-                Prism.messenger.playerSubduedHeaderMsg("Purge cycle cleared " + cycle_rows_affected + " records."));
+                Prism.messenger.playerSubduedHeaderMsg("周期数据清理任务清理了 " + cycle_rows_affected + " 个记录."));
         if (cycle_complete) {
-            sender.sendMessage(Prism.messenger.playerHeaderMsg(total_records_affected + " records purged. Max cycle time " + max_cycle_time + " msec."));
+            sender.sendMessage(Prism.messenger.playerHeaderMsg("一共清理了" + total_records_affected + " 个数据. 最大周期时间为 " + max_cycle_time + " msec."));
         }
     }
 

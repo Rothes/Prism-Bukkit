@@ -31,12 +31,12 @@ public class FlagsCommand implements SubHandler {
      */
     private void help(CommandSender sender) {
 
-        sender.sendMessage(Prism.messenger.playerHeaderMsg(ChatColor.GOLD + "--- Flags Help ---"));
+        sender.sendMessage(Prism.messenger.playerHeaderMsg(ChatColor.GOLD + "--- 标志帮助 ---"));
 
         sender.sendMessage(Prism.messenger.playerMsg(
-                ChatColor.GRAY + "Flags control how Prism applies a rollback/restore, or formats lookup results."));
+                ChatColor.GRAY + "标志能控制 Prism 如何应用一次回滚/还原, 或者格式化查询结果."));
         sender.sendMessage(Prism.messenger
-                .playerMsg(ChatColor.GRAY + "Use them after parameters, like /pr l p:<player> -extended"));
+                .playerMsg(ChatColor.GRAY + "在参数后使用它们, 例如 /pr l p:<玩家名> -扩展参数"));
         for (final Flag flag : Flag.values()) {
             sender.sendMessage(Prism.messenger.playerMsg(ChatColor.LIGHT_PURPLE + flag.getUsage().replace("_", "-")
                     + ChatColor.WHITE + " " + flag.getDescription()));

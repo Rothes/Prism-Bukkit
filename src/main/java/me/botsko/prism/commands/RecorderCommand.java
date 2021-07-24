@@ -28,7 +28,7 @@ public class RecorderCommand extends AbstractCommand {
     public void handle(final CallInfo call) {
 
         if (call.getArgs().length <= 1) {
-            call.getSender().sendMessage(Prism.messenger.playerError("Invalid command. Use /pr ? for help"));
+            call.getSender().sendMessage(Prism.messenger.playerError("未知的指令. 使用 '/pr ?' 获取帮助."));
             return;
         }
 
