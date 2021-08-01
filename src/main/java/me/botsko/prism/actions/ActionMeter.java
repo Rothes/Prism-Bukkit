@@ -33,7 +33,7 @@ public class ActionMeter {
             meter.put(PrismRollbackAction.class.getSimpleName(),getMeter(PrismRollbackAction.class));
             meter.put(SignAction.class.getSimpleName(), getMeter(SignAction.class));
             meter.put(VehicleAction.class.getSimpleName(), getMeter(VehicleAction.class));
-            Prism.log("Action Meter metrics enabled. " + meter.size() + " metrics registered");
+            Prism.log("已启用 行为仪表 指标. " + meter.size() + " 个指标已注册");
             monitoring = true;
         }
     }

@@ -123,9 +123,9 @@ public class ActionMessage {
             // make
             // a custom handler.
             if (action.getName().equals("lava-bucket")) {
-                line1 += " " + highlight + "lava";
+                line1 += " " + highlight + "熔岩";
             } else if (action.getName().equals("water-bucket")) {
-                line1 += " " + highlight + "water";
+                line1 += " " + highlight + "水";
             }
         }
 
