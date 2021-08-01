@@ -228,8 +228,6 @@ public class PrismConfig extends ConfigBase {
         oreBlocks.put(Material.LAPIS_ORE.name().toLowerCase(), "#0670cc");
         oreBlocks.put(Material.DIAMOND_ORE.name().toLowerCase(), "#04babd");
         oreBlocks.put(Material.EMERALD_ORE.name().toLowerCase(), "#21bf60");
-        oreBlocks.put(Material.NETHER_GOLD_ORE.name().toLowerCase(), "#ff7308");
-        oreBlocks.put(Material.ANCIENT_DEBRIS.name().toLowerCase(), "#856d3e");
         config.addDefault("prism.alerts.ores.blocks", oreBlocks);
 
         // Illegal Command Alerts

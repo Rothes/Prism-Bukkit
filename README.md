@@ -1,3 +1,5 @@
+**此分支为 Prism 2.1.8-dev for Minecraft 1.15 的非官方适配**
+
 # 棱镜 - 中文汉化版本
 
 **Prism-Bukkit ( 棱镜 )** 是一个可以追踪 Minecraft 世界变化的 Bukkit 插件. 这些变化可以被查询, 回滚, 还原, 或被执行其它操作.

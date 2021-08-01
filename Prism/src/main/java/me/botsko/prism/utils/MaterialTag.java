@@ -34,7 +34,7 @@ public class MaterialTag implements Tag<Material> {
             Material.PUMPKIN_STEM, Material.ATTACHED_PUMPKIN_STEM);
     public static final Tag<Material> SOIL_CANDIDATES = new MaterialTag(Material.AIR, Material.WATER, Material.LAVA,
             Material.DIRT, Material.GRASS_BLOCK, Material.PODZOL, Material.MYCELIUM, Material.COARSE_DIRT,
-            Material.FARMLAND, Material.GRASS_PATH, Material.WARPED_NYLIUM, Material.CRIMSON_NYLIUM);
+            Material.FARMLAND, Material.GRASS_PATH);
     public static final MaterialTag WALL_SKULLS = new MaterialTag(Material.SKELETON_WALL_SKULL,
             Material.WITHER_SKELETON_WALL_SKULL, Material.CREEPER_WALL_HEAD, Material.DRAGON_WALL_HEAD,
             Material.PLAYER_WALL_HEAD, Material.ZOMBIE_WALL_HEAD);
@@ -58,7 +58,7 @@ public class MaterialTag implements Tag<Material> {
             Material.DROPPER,Material.DISPENSER, Material.HOPPER,Material.HOPPER_MINECART
     );
     public static final MaterialTag USABLE = new MaterialTag(Tag.BUTTONS).append(Tag.DOORS).append(Tag.TRAPDOORS)
-            .append(Material.LEVER).append(Tag.FENCE_GATES);
+            .append(Material.LEVER);
     // Affected by bone meal.
     public static final MaterialTag GROWABLE = new MaterialTag(CROPS).append(PLANTS).append(Material.CACTUS)
             .append(Tag.SAPLINGS);

@@ -21,7 +21,6 @@ import me.botsko.prism.database.PrismDataSource;
 import me.botsko.prism.database.PrismDatabaseFactory;
 import me.botsko.prism.database.sql.SqlPlayerIdentificationHelper;
 import me.botsko.prism.events.EventHelper;
-import me.botsko.prism.listeners.PaperListeners;
 import me.botsko.prism.listeners.PrismBlockEvents;
 import me.botsko.prism.listeners.PrismCustomEvents;
 import me.botsko.prism.listeners.PrismEntityEvents;
@@ -395,13 +394,14 @@ public class Prism extends JavaPlugin implements PrismApi {
         prismLocalization = new PrismLocalization();
         prismLocalization.initialize(instance);
         log("正在初始化 Prism " + pluginVersion + ". 原作者 Viveleroi; 现维护者 the AddstarMC Network; 汉化 Rothes");
-        log("");
-        log("§a=============================================================");
-        log("§2 * 您正在使用第三方汉化版本的 Prism 插件!");
-        log("§2 * 请不要使用本插件在英文版支持处/ GitHub 上反馈任何问题!");
-        log("§2 * 此汉化的 GitHub 为 https://github.com/Rothes/Prism-Bukkit");
-        log("§a=============================================================");
-        log("");
+        Bukkit.getConsoleSender().sendMessage("");
+        Bukkit.getConsoleSender().sendMessage("§a=============================================================");
+        Bukkit.getConsoleSender().sendMessage("§2 * 您正在使用第三方汉化版本的 Prism 插件!");
+        Bukkit.getConsoleSender().sendMessage("§2 * 您正在使用第三方适配 1.15 的 Prism 插件!");
+        Bukkit.getConsoleSender().sendMessage("§2 * 请不要使用本插件在英文版支持处/ GitHub 上反馈任何问题!");
+        Bukkit.getConsoleSender().sendMessage("§2 * 此汉化的 GitHub 为 https://github.com/Rothes/Prism-Bukkit");
+        Bukkit.getConsoleSender().sendMessage("§a=============================================================");
+        Bukkit.getConsoleSender().sendMessage("");
         loadConfig();        // Load configuration, or install if new
         isPaper = PaperLib.isPaper();
         if (isPaper) {
@@ -535,10 +535,6 @@ public class Prism extends JavaPlugin implements PrismApi {
             getServer().getPluginManager().registerEvents(new PrismEntityEvents(this), this);
             getServer().getPluginManager().registerEvents(new PrismWorldEvents(), this);
             getServer().getPluginManager().registerEvents(new PrismPlayerEvents(this), this);
-            if (isPaper) {
-                //register listeners that only work with paper.
-                getServer().getPluginManager().registerEvents(new PaperListeners(this), this);
-            }
             getServer().getPluginManager().registerEvents(new PrismInventoryEvents(this), this);
             getServer().getPluginManager().registerEvents(new PrismVehicleEvents(this), this);
 

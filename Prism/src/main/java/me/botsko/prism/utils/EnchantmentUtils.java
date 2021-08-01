@@ -168,8 +168,6 @@ public class EnchantmentUtils {
             enchantName = "经验修补";
         } else if (enchantment.equals(Enchantment.VANISHING_CURSE)) {
             enchantName = "消失诅咒";
-        } else if (enchantment.equals(Enchantment.SOUL_SPEED)) {
-            enchantName = "灵魂疾行";
         } else {
             enchantName = enchantment.getKey().getKey().toLowerCase().replace("_", " ");
         }

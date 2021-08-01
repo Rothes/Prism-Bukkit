@@ -412,9 +412,6 @@ public class PrismEntityEvents extends BaseListener {
             case ENDER_PEARL:
                 reason = "末影珍珠";
                 break;
-            case COMMAND:
-                reason = "指令";
-                break;
             case NETHER_PORTAL:
                 reason = "下界传送门";
                 break;
@@ -501,9 +498,6 @@ public class PrismEntityEvents extends BaseListener {
                 break;
             case VILLAGE_DEFENSE:
                 reason = "村庄防御";
-                break;
-            case PIGLIN_ZOMBIFIED:
-                reason = "猪灵转化";
                 break;
             case SILVERFISH_BLOCK:
                 reason = "蠹虫刷怪石";
