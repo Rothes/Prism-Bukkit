@@ -1,8 +1,8 @@
-!!!已停更!!! 请前往 https://github.com/Rothes/PrismRefracted[refracted]
+!!!已停更!!! 请前往 [https://github.com/Rothes/PrismRefracted][refracted]
 
-!!!已停更!!! 请前往 https://github.com/Rothes/PrismRefracted[refracted]
+!!!已停更!!! 请前往 [https://github.com/Rothes/PrismRefracted][refracted]
 
-!!!已停更!!! 请前往 https://github.com/Rothes/PrismRefracted[refracted]
+!!!已停更!!! 请前往 [https://github.com/Rothes/PrismRefracted][refracted]
 
 
 # 棱镜 - 中文汉化版本
