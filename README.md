@@ -1,3 +1,10 @@
+!!!已停更!!! 请前往 https://github.com/Rothes/PrismRefracted[refracted]
+
+!!!已停更!!! 请前往 https://github.com/Rothes/PrismRefracted[refracted]
+
+!!!已停更!!! 请前往 https://github.com/Rothes/PrismRefracted[refracted]
+
+
 # 棱镜 - 中文汉化版本
 
 **Prism-Bukkit ( 棱镜 )** 是一个可以追踪 Minecraft 世界变化的 Bukkit 插件. 这些变化可以被查询, 回滚, 还原, 或被执行其它操作.
@@ -44,3 +51,4 @@
 [addstarmc]: https://github.com/AddstarMC
 [moss]: https://discord.gg/V9hS3q7m
 [spigot]: https://www.spigotmc.org/resources/prism.75166/
+[refracted]: https://github.com/Rothes/PrismRefracted
