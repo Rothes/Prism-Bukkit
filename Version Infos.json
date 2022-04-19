@@ -13,10 +13,10 @@
     "0-233-EXTRA": {
       "Log_Level": "Info",
       "Actions": [],
-      "Message_Times": 1,
       "Message": {
         "zh-CN": "§b新版本贴内已发布 1.16 适配版. 请立即更新."
-      },
+      }
+    },
     "0-233": {
       "Log_Level": "Info",
       "Actions": [],
