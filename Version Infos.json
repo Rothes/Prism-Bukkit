@@ -5,7 +5,7 @@
       "Actions": [],
       "Log_Level": "Info",
       "Message": {
-        "zh-CN": "§b由于英文版作者转移, 您使用的版本已过时. 请在新搬运贴下载新版插件: https://www.mcbbs.net/thread-1301499-1-1.html !\n§b支持无损转移/更新至新版本. 当前版本已不再维护."
+        "zh-CN": "§b由于英文版作者转移, 您使用的版本已过时. 请在新搬运贴下载新版插件: https://beta.mcbbs.net/resource/servermod/qcnedi83/ !\n§b支持无损转移/更新至新版本. 当前版本已不再维护."
       }
     }
   },
@@ -14,7 +14,7 @@
       "Log_Level": "Warn",
       "Actions": ["Prohibit"],
       "Message": {
-        "zh-CN": "§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/qcnedi83/\n§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/qcnedi83/\n§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/qcnedi83/\n§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/qcnedi83/\n§c§n§l更新至最新版本后, 你方可正常使用插件!"
+        "zh-CN": "§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/servermod/qcnedi83/\n§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/servermod/qcnedi83/\n§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/servermod/qcnedi83/\n§c§n§l你的版本严重落后! 请立即更新至最新版本, 否则会影响到你安装之后的更新!\n§c§n§l请更新您的插件: https://beta.mcbbs.net/resource/servermod/qcnedi83/\n§c§n§l更新至最新版本后, 你方可正常使用插件!"
       }
     },
     "0-233": {
