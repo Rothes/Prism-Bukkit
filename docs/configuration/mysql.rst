@@ -3,7 +3,7 @@
 Mysql
 =====
 
-在 Ubuntu 上安装 - 实际上只需要运行 `sudo apt-get install mysql-server` 并按照提示来完成安装, 但是如果需要, 您也可以在这里找到全面的指南: `安装 MySQL <https://wangxin1248.github.io/linux/2018/07/ubuntu18.04-install-mysqlserver.html>`_  您可能需要百度来寻找您的特定服务器类型.
+在 Ubuntu 上安装 - 实际上只需要运行 `sudo apt-get install mysql-server` 并按照提示来完成安装, 但是如果需要, 您也可以在这里找到全面的指南: `安装 MySQL <https://wangxin1248.github.io/linux/2018/07/ubuntu18.04-install-mysqlserver.html>`_ . 您可能需要百度来寻找您的特定服务器类型.
 
 在 Windows 上安装 (\ **原作者:**\ 我重申, Windows 并不是适合运行 Minecraft 服务器的操作系统) , 但如果您需要的话, 可参考  `在 Windows 上安装 MySQL <https://www.cnblogs.com/kendoziyu/p/MySQL.html>`_
 
@@ -19,7 +19,7 @@ Mysql
 
 即可.
 
-记住如果您的 MySQL 和 Minecraft 服务器并不运行在同一个机器, 您就需要调整 `localhost` 字符串为 MySQL 服务器主机名. 如果您不确定, 可以将其调为 `%`, 但是这并不安全.
+记住, 如果您的 MySQL 和 Minecraft 服务器并不运行在同一个机器, 您就需要调整 `localhost` 字符串为 Minecraft 服务器的主机名. 如果您不太清楚, 可以将其调为 `%`, 但是这并不安全.
 
 
 MySQL 配置一般应该调整成这样:-
